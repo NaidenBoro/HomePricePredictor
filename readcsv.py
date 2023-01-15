@@ -18,9 +18,9 @@ stai.remove('Гараж')
 stai = list(stai)
 info =list(set(info))
 
-# print(kv)
-# print(stai)
-# print(info)
+print(kv)
+print(stai)
+print(info)
 
 #Generating a list of values to one hot encode a category based on a vocabulary of values
 def one_hot(el, lst):
@@ -41,13 +41,13 @@ spr=','
 
 # This is if you want to predict your own home or a new one
 
-# my_home = 'Център,София,Тристаен,80,Обзаведен+Тухла+ТЕЦ'.split(',')
-# output = spr.join(str(x) for x in one_hot(my_home[0],kv))+spr
-# output += spr.join(str(x) for x in one_hot(my_home[2],stai))+spr
-# output += my_home[3] + spr
-# output += spr.join(str(x) for x in tokenize(my_home[4].split('+'),info))+spr
-# output += my_home[5]
-# print (output)
+my_home = 'Център,София,Тристаен,80,Обзаведен+Тухла+ТЕЦ'.split(',')
+output = spr.join(str(x) for x in one_hot(my_home[0],kv))+spr
+output += spr.join(str(x) for x in one_hot(my_home[2],stai))+spr
+output += my_home[3] + spr
+output += spr.join(str(x) for x in tokenize(my_home[4].split('+'),info))+spr
+output += my_home[5]
+print (output)
 
 #Generating a proccessed csv without Garages
 
