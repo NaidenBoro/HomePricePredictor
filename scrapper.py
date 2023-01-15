@@ -5,12 +5,16 @@ import json
 
 #json.loads(x.text)['result']
 appartaments = []
+
+#Retriving all the appartaments
 for i in range (140):
     x = requests.get('https://www.homes.bg/api/offers?startIndex=%s&stopIndex=%d' % (i, i+99))
     appartaments = appartaments+json.loads(x.text)['result']
     print(i)
 
-f = open("demofile2.txt", "a",encoding="utf-8")
+
+#Formating the data in a more readable format
+f = open("data.csv", "a",encoding="utf-8")
 for ap in appartaments:
     
     if(ap['price']['currency'] != 'EUR'):
